@@ -296,6 +296,7 @@ img {
 
 .mission-statement {
   margin: 0;
+  font-weight: 400;
   font-family: var(--serif);
   font-size: clamp(1.45rem, 2.35vw, 1.95rem);
   line-height: 1.42;
@@ -477,6 +478,11 @@ img {
   color: var(--muted);
   font-size: 1.125rem;
   line-height: 1.6;
+}
+
+.contact address {
+  margin: 0;
+  font-style: normal;
 }
 
 .contact-mail {
