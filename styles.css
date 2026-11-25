@@ -515,17 +515,68 @@ img {
 .contact-mail {
   display: inline-block;
   margin-top: 2rem;
-  color: var(--white);
+  color: var(--red);
   font-size: clamp(1.25rem, 2vw, 1.65rem);
   font-weight: 500;
   letter-spacing: -0.03em;
   text-decoration: none;
-  border-bottom: 2px solid var(--red);
+  border-bottom: 2px solid transparent;
   padding-bottom: 0.12rem;
 }
 
 .contact-mail:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.quick-links {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.contact h2.eyebrow {
+  max-width: none;
+  margin: 0 0 1.1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+}
+
+.quick-link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.quick-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.7rem;
+}
+
+.quick-link-list .dot {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--red);
+  flex: none;
+  font-size: 0;
+}
+
+.quick-links a {
+  color: var(--white);
+  font-size: 1.05rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.quick-links a:hover {
   color: var(--red);
+  border-bottom-color: var(--red);
 }
 
 .site-footer {
@@ -568,38 +619,6 @@ img {
 .footer-copy {
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.footer-links {
-  margin: 0 0 1.25rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.footer-links h2 {
-  margin: 0 0 0.85rem;
-  color: var(--white);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-.footer-link-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem 1.35rem;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.92rem;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-
-.footer-links a:hover {
-  color: var(--white);
-  border-bottom-color: var(--red);
 }
 
 .hero-title,
@@ -701,6 +720,16 @@ img {
     letter-spacing: 0.08em;
   }
 
+  .quick-link-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .quick-link-row .dot {
+    display: none;
+  }
+
   .work-item h3 {
     font-size: clamp(2.5rem, 13vw, 3.4rem);
   }
@@ -742,7 +771,8 @@ img {
   .contact-lead,
   .footer-legal,
   .footer-copy,
-  .footer-links a,
+  .quick-links a,
+  .contact .eyebrow,
   .beliefs .section-lead,
   .beliefs .eyebrow,
   .beliefs .conviction p,
