@@ -188,7 +188,23 @@ img {
 }
 
 .period {
+  display: inline-block;
   color: var(--red);
+  transform-origin: 50% 80%;
+  animation: mark 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.62s both;
+}
+
+.hero h1 .line {
+  display: inline-block;
+  animation: rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero h1 .line-2 {
+  animation-delay: 0.12s;
+}
+
+.hero-title .eyebrow {
+  animation: rise 0.7s ease both;
 }
 
 .hero-aside {
@@ -621,7 +637,6 @@ img {
   font-size: 0.92rem;
 }
 
-.hero-title,
 .hero-aside,
 .hero-meta {
   animation: rise 0.7s ease both;
@@ -641,6 +656,21 @@ img {
     transform: translateY(10px);
   }
   to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes mark {
+  0% {
+    opacity: 0;
+    transform: translateY(0.28em) scale(0.35);
+  }
+  62% {
+    opacity: 1;
+    transform: translateY(-0.04em) scale(1.12);
+  }
+  100% {
     opacity: 1;
     transform: none;
   }
