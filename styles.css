@@ -184,6 +184,7 @@ img {
   letter-spacing: -0.062em;
   line-height: 0.84;
   color: var(--white);
+  text-transform: lowercase;
 }
 
 .period {
@@ -294,6 +295,10 @@ img {
   display: none;
 }
 
+.keep {
+  white-space: nowrap;
+}
+
 .mission-statement {
   margin: 0;
   font-weight: 400;
@@ -324,6 +329,28 @@ img {
 .think {
   background: var(--ink-2);
   padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(4rem, 8vw, 6.5rem);
+}
+
+.beliefs {
+  background: var(--red);
+  color: white;
+  padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(4rem, 8vw, 6.5rem);
+}
+
+.beliefs .section-lead,
+.beliefs .eyebrow,
+.beliefs .conviction p,
+.beliefs .num {
+  color: white;
+}
+
+.beliefs .eyebrow::before {
+  background: white;
+}
+
+.beliefs .conviction,
+.beliefs .conviction:last-child {
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .work {
@@ -619,7 +646,7 @@ img {
 
 @media (max-width: 640px) {
   section[id] {
-    scroll-margin-top: 8.75rem;
+    scroll-margin-top: 10.5rem;
   }
 
   .bar {
@@ -670,6 +697,7 @@ img {
   body,
   .hero,
   .think,
+  .beliefs,
   .contact,
   .site-footer {
     background: white;
@@ -681,7 +709,15 @@ img {
   .conviction p,
   .contact-lead,
   .footer-legal,
-  .footer-copy {
+  .footer-copy,
+  .beliefs .section-lead,
+  .beliefs .eyebrow,
+  .beliefs .conviction p,
+  .beliefs .num {
     color: #222;
+  }
+
+  .beliefs .eyebrow::before {
+    background: #222;
   }
 }
