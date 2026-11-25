@@ -571,12 +571,23 @@ img {
 }
 
 .footer-links {
+  margin: 0 0 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-links h2 {
+  margin: 0 0 0.85rem;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.footer-link-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem 1.35rem;
-  margin-top: 1.15rem;
-  padding-top: 1.1rem;
-  border-top: 1px solid var(--line);
 }
 
 .footer-links a {
