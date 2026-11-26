@@ -350,6 +350,15 @@ img {
   padding: clamp(4.5rem, 9vw, 7.5rem) 0;
 }
 
+.mission + .work {
+  padding-top: 0;
+}
+
+.mission + .work .section-head {
+  border-top: 1px solid var(--line-strong);
+  padding-top: clamp(4rem, 8vw, 6rem);
+}
+
 .section-head {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
