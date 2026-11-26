@@ -174,7 +174,6 @@ img {
   grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.7fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: end;
-  padding-bottom: clamp(2.25rem, 5vh, 3.25rem);
 }
 
 .hero h1 {
@@ -256,30 +255,6 @@ img {
 
 .button:hover .arrow {
   transform: translateX(4px);
-}
-
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.5rem;
-  justify-content: space-between;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero-meta a {
-  color: var(--white);
-  text-decoration: none;
-  border-bottom: 1px solid var(--red);
-}
-
-.hero-meta a:hover {
-  color: var(--red);
 }
 
 .mission {
@@ -645,17 +620,12 @@ img {
   font-size: 0.92rem;
 }
 
-.hero-aside,
-.hero-meta {
+.hero-aside {
   animation: rise 0.7s ease both;
 }
 
 .hero-aside {
   animation-delay: 0.1s;
-}
-
-.hero-meta {
-  animation-delay: 0.18s;
 }
 
 @keyframes rise {
@@ -692,10 +662,6 @@ img {
   .hero-grid {
     flex: none;
     padding-bottom: 0;
-  }
-
-  .hero-meta {
-    margin-top: 2.75rem;
   }
 
   .hero-grid,
@@ -754,10 +720,6 @@ img {
     gap: 0.15rem 1rem;
   }
 
-  .hero-meta {
-    letter-spacing: 0.08em;
-  }
-
   .quick-link-row {
     flex-direction: column;
     align-items: flex-start;
@@ -788,7 +750,6 @@ img {
 
 @media print {
   .site-header,
-  .hero-meta,
   .button {
     display: none;
   }
