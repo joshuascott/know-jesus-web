@@ -318,7 +318,8 @@ img {
 }
 
 .think {
-  background: var(--ink-2);
+  background: var(--paper);
+  color: var(--navy);
   padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(4rem, 8vw, 6.5rem);
 }
 
@@ -345,18 +346,8 @@ img {
 }
 
 .work {
-  background: var(--paper);
-  color: var(--navy);
+  background: var(--ink-2);
   padding: clamp(4.5rem, 9vw, 7.5rem) 0;
-}
-
-.mission + .work {
-  padding-top: 0;
-}
-
-.mission + .work .section-head {
-  border-top: 1px solid var(--line-strong);
-  padding-top: clamp(4rem, 8vw, 6rem);
 }
 
 .section-head {
@@ -383,13 +374,19 @@ img {
   line-height: 1.55;
 }
 
-.think .section-lead {
+.work .section-lead {
   color: var(--muted);
 }
 
-.work .section-lead,
-.work .eyebrow {
+.think .section-lead,
+.think .eyebrow,
+.think .conviction p {
   color: var(--ink-soft);
+}
+
+.think .conviction,
+.think .conviction:last-child {
+  border-color: var(--line-strong);
 }
 
 .convictions,
@@ -413,7 +410,6 @@ img {
 }
 
 .work-item {
-  border-color: var(--line-strong);
   padding: 2.1rem 0 2rem;
   align-items: start;
 }
@@ -475,7 +471,7 @@ img {
 .work-item p {
   margin-top: 0.85rem;
   max-width: 36rem;
-  color: var(--ink-soft);
+  color: var(--muted);
   font-size: 1.125rem;
 }
 
