@@ -27,7 +27,7 @@ const markCurrent = (id) => {
 const updateCurrent = () => {
   if (!sections.length) return;
 
-  const focus = (header?.offsetHeight ?? 0) + 12;
+  const focus = window.innerHeight * 0.35;
   let current = sections[0];
 
   for (const section of sections) {
@@ -36,9 +36,10 @@ const updateCurrent = () => {
     }
   }
 
-  const doc = document.documentElement;
-  if (window.scrollY + window.innerHeight >= doc.scrollHeight - 2) {
-    current = sections[sections.length - 1];
+  const last = sections[sections.length - 1];
+  const lastTop = last.getBoundingClientRect().top;
+  if (lastTop < window.innerHeight * 0.55) {
+    current = last;
   }
 
   markCurrent(current.id);
