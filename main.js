@@ -21,19 +21,29 @@ const markCurrent = (id) => {
   });
 };
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) markCurrent(visible.target.id);
-    },
-    { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.4, 0.7] }
-  );
+const updateCurrent = () => {
+  if (!sections.length) return;
 
-  sections.forEach((section) => observer.observe(section));
-}
+  const focus = (header?.offsetHeight ?? 0) + window.innerHeight * 0.22;
+  let current = sections[0];
+
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= focus) {
+      current = section;
+    }
+  }
+
+  const doc = document.documentElement;
+  if (window.scrollY + window.innerHeight >= doc.scrollHeight - 2) {
+    current = sections[sections.length - 1];
+  }
+
+  markCurrent(current.id);
+};
+
+updateCurrent();
+window.addEventListener("scroll", updateCurrent, { passive: true });
+window.addEventListener("resize", updateCurrent);
 
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());
